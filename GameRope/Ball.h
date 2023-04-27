@@ -24,6 +24,7 @@ public:
 
 private:
     float m_gravity;
+    sf::Texture ballTexture;
     sf::Vector2f m_velocity;
     bool ballScored;
     bool ballEscaped;
