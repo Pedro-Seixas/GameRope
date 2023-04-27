@@ -2,6 +2,13 @@
 #include <iostream>
 #include "level_one.h"
 #include "MainMenu.h"
+#include "TextTransition.h"
+
+
+void TextTransition::draw(sf::RenderWindow& window)
+{
+    window.draw(m_text);
+}
 
 enum GameState { MENU, LEVEL_ONE };
 
@@ -13,7 +20,6 @@ int main()
 
     sf::RenderWindow window(sf::VideoMode(1280, 720), "I ROPE it works");
     window.setFramerateLimit(120);
-
 
     while (window.isOpen())
     {
@@ -55,6 +61,8 @@ int main()
             currentState = MENU;
             resetMenu();
         }
+
+        window.display();
     }
 
     return 0;

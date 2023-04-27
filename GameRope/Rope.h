@@ -24,6 +24,7 @@ private:
     sf::RectangleShape m_rope;
     sf::Vector2f m_finalPosition;
     sf::Vector2f m_startPosition;
+    sf::Texture texture;
     float m_angle;
     float m_length;
     float deltaTime;

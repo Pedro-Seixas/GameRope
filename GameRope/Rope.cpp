@@ -4,10 +4,17 @@
 //Constructor
 Rope::Rope(sf::Vector2f startPosition, float width, float height, sf::Vector2f spherePosition) : m_angle(0.f)
 {
+
+    if (!texture.loadFromFile("img/ropeImg.png")) {
+        std::cout << "Failed to Upload Image" << std::endl;
+    }
+
     m_startPosition = startPosition;
     m_rope.setSize(sf::Vector2f(width, height));
     m_rope.setFillColor(sf::Color::White);
     m_rope.setPosition(startPosition);
+    m_rope.setTexture(&texture);
+    m_rope.setScale(2.f, 1.f);
     m_finalPosition = sf::Vector2f(m_startPosition.x, m_startPosition.y + height);
     m_length = height;
     ball = new Ball(30.f, m_finalPosition);
@@ -22,6 +29,7 @@ Rope::Rope(sf::Vector2f startPosition, float width, float height, sf::Vector2f s
 
 void Rope::createNewBall()
 {
+    delete ball;
     ball = new Ball(30.f, m_finalPosition);
 }
 

@@ -7,9 +7,14 @@
 
 Ball::Ball(float radius, sf::Vector2f position) : m_gravity(-0.1f), m_velocity(0.f, 0.f)
 {
+    if (!ballTexture.loadFromFile("img/ballImg.png")) {
+        std::cout << "Failed to Upload Image" << std::endl;
+    }
+
     m_ball.setRadius(radius);
-    m_ball.setFillColor(sf::Color::Red);
+    //m_ball.setFillColor(sf::Color::Red);
     m_ball.setPosition(position);
+    m_ball.setTexture(&ballTexture);
     ballScored = false;
     ballEscaped = false;
 
@@ -71,7 +76,7 @@ void Ball::scoredGoal()
 
 bool Ball::outOfBounds()
 {
-    if ((m_ball.getPosition().x > 1280 || m_ball.getPosition().x < -50.f ) || m_ball.getPosition().y > 740)
+    if ((m_ball.getPosition().x > 1400 || m_ball.getPosition().x < -400.f ) || m_ball.getPosition().y > 900)
     {
         return true;
     }
