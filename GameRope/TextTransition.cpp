@@ -15,17 +15,17 @@ TextTransition::TextTransition(std::string text, sf::Vector2f position)
 void TextTransition::moveText()
 {
     static float velocity;
-
+    static sf::Clock waitTimer;
 
     sf::Vector2f position = m_text.getPosition();
 
-    if (m_text.getPosition().x >= 500)
+    if (m_text.getPosition().x >= 500 && waitTimer.getElapsedTime().asSeconds() <= 1.7)
     {
         velocity = 0.f;
     }
     else
     {
-        velocity = 20.f;
+        velocity = 30.f;
         m_text.setPosition(sf::Vector2f(position.x + velocity, position.y));
     }
 }
