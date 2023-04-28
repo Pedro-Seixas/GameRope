@@ -15,58 +15,58 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="..\x64\Release\Ball.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MainMenu.cpp">
+    <ClCompile Include="..\x64\Release\Goal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Rope.cpp">
+    <ClCompile Include="..\x64\Release\level_one.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Ball.cpp">
+    <ClCompile Include="..\x64\Release\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Goal.cpp">
+    <ClCompile Include="..\x64\Release\MainMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Obstacle.cpp">
+    <ClCompile Include="..\x64\Release\Menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="level_one.cpp">
+    <ClCompile Include="..\x64\Release\Obstacle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Menu.cpp">
+    <ClCompile Include="..\x64\Release\Rope.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TextTransition.cpp">
+    <ClCompile Include="..\x64\Release\TextTransition.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Rope.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="..\x64\Release\Ball.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Ball.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="..\x64\Release\Goal.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Goal.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="..\x64\Release\level_one.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Obstacle.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="..\x64\Release\MainMenu.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="level_one.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="..\x64\Release\Menu.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Menu.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="..\x64\Release\Obstacle.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MainMenu.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="..\x64\Release\Rope.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TextTransition.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="..\x64\Release\TextTransition.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

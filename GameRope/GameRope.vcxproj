@@ -18,6 +18,27 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\x64\Release\Ball.cpp" />
+    <ClCompile Include="..\x64\Release\Goal.cpp" />
+    <ClCompile Include="..\x64\Release\level_one.cpp" />
+    <ClCompile Include="..\x64\Release\main.cpp" />
+    <ClCompile Include="..\x64\Release\MainMenu.cpp" />
+    <ClCompile Include="..\x64\Release\Menu.cpp" />
+    <ClCompile Include="..\x64\Release\Obstacle.cpp" />
+    <ClCompile Include="..\x64\Release\Rope.cpp" />
+    <ClCompile Include="..\x64\Release\TextTransition.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\x64\Release\Ball.h" />
+    <ClInclude Include="..\x64\Release\Goal.h" />
+    <ClInclude Include="..\x64\Release\level_one.h" />
+    <ClInclude Include="..\x64\Release\MainMenu.h" />
+    <ClInclude Include="..\x64\Release\Menu.h" />
+    <ClInclude Include="..\x64\Release\Obstacle.h" />
+    <ClInclude Include="..\x64\Release\Rope.h" />
+    <ClInclude Include="..\x64\Release\TextTransition.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -138,27 +159,6 @@
       <AdditionalDependencies>sfml-system.lib;sfml-window.lib;sfml-graphics.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Ball.cpp" />
-    <ClCompile Include="Goal.cpp" />
-    <ClCompile Include="level_one.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="MainMenu.cpp" />
-    <ClCompile Include="Menu.cpp" />
-    <ClCompile Include="Obstacle.cpp" />
-    <ClCompile Include="Rope.cpp" />
-    <ClCompile Include="TextTransition.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Ball.h" />
-    <ClInclude Include="Goal.h" />
-    <ClInclude Include="level_one.h" />
-    <ClInclude Include="MainMenu.h" />
-    <ClInclude Include="Menu.h" />
-    <ClInclude Include="Obstacle.h" />
-    <ClInclude Include="Rope.h" />
-    <ClInclude Include="TextTransition.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
