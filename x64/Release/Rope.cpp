@@ -26,14 +26,6 @@ Rope::Rope(sf::Vector2f startPosition, float width, float height, sf::Vector2f s
 
 };
 
-
-void Rope::createNewBall()
-{
-    delete ball;
-    ball = new Ball(30.f, m_finalPosition);
-}
-
-
 void Rope::draw(sf::RenderWindow& window)
 {
     window.draw(m_rope);
@@ -83,5 +75,8 @@ sf::Vector2f Rope::getFinalPosition() {
 
 void Rope::restartBall()
 {
-    createNewBall();
+    //Set ball back to the rope
+    ball->m_ball.setPosition(getFinalPosition());
+    ball->setVelocity(m_angle);
+    ball->setBallEscaped(false);
 }

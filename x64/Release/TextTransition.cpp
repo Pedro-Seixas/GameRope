@@ -12,7 +12,7 @@ TextTransition::TextTransition(std::string text, sf::Vector2f position, unsigned
     m_text.setFillColor(sf::Color::White);
     m_text.setPosition(position);
 }
-void TextTransition::moveText()
+bool TextTransition::moveText()
 {
     static float velocity;
     static sf::Clock waitTimer;
@@ -27,5 +27,14 @@ void TextTransition::moveText()
     {
         velocity = 30.f;
         m_text.setPosition(sf::Vector2f(position.x + velocity, position.y));
+    }
+    //Check if Text left screen
+    if (m_text.getPosition().x > 2000)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
     }
 }

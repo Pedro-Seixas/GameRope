@@ -10,7 +10,7 @@ class TextTransition
 public:
     TextTransition(std::string text, sf::Vector2f position, unsigned int size);
     sf::Text getText() const { return m_text; }
-    void moveText();
+    bool moveText();
     void draw(sf::RenderWindow& window);
 
 private:

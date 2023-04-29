@@ -91,3 +91,7 @@ void Ball::setBallStatus()
     ballScored = true;
 }
 
+void Ball::setBallEscaped(bool escapeStatus)
+{
+    ballEscaped = escapeStatus;
+}

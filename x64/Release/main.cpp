@@ -10,7 +10,7 @@ void TextTransition::draw(sf::RenderWindow& window)
     window.draw(m_text);
 }
 
-enum GameState { MENU, LEVEL_ONE };
+enum GameState { MENU, LEVEL_ONE, LEVEL_TWO };
 
 
 int main()
@@ -34,12 +34,11 @@ int main()
         case MENU:
             if (menu(window) == 0)
             {
-                std::cout << "start" << std::endl;
                 currentState = LEVEL_ONE;
             }
             else if (menu(window) == 1)
             {
-                std::cout << "about" << std::endl;
+
             }
             else if (menu(window) == 2)
             {
@@ -50,9 +49,21 @@ int main()
         case LEVEL_ONE:
             if (levelOne(window))
             {
-                std::cout << "Level One Completed" << std::endl;
+                if (applyTransition(window))
+                {
+                    currentState = LEVEL_TWO;
+                }
             }
             break;
+
+        //case LEVEL_TWO:
+        //    if (levelTwo(window))
+        //    {
+        //        if (applyTransition(window))
+        //        {
+        //            std::cout << "You completed The Level" << std::endl;
+        //        }
+        //    }
         }
 
 

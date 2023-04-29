@@ -21,6 +21,7 @@ public:
     void setBallStatus();
     void invertVelocity();
     bool outOfBounds();
+    void setBallEscaped(bool escapeStatus);
 
 private:
     float m_gravity;

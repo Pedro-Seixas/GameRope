@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="img">
+      <UniqueIdentifier>{8cf8e20f-f97b-4661-85f7-97bead82493b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="font">
+      <UniqueIdentifier>{56779723-5ec0-42b7-83bc-30dd9f8543e4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\x64\Release\Ball.cpp">
@@ -68,5 +74,49 @@
     <ClInclude Include="..\x64\Release\TextTransition.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\x64\Release\GameRope.exe" />
+    <None Include="..\x64\Release\GameRope.pdb" />
+    <None Include="..\x64\Release\openal32.dll" />
+    <None Include="..\x64\Release\sfml-audio-2.dll" />
+    <None Include="..\x64\Release\sfml-graphics-2.dll" />
+    <None Include="..\x64\Release\sfml-network-2.dll" />
+    <None Include="..\x64\Release\sfml-system-2.dll" />
+    <None Include="..\x64\Release\sfml-window-2.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\x64\Release\Img\About.png">
+      <Filter>img</Filter>
+    </Image>
+    <Image Include="..\x64\Release\Img\About_Selected.png">
+      <Filter>img</Filter>
+    </Image>
+    <Image Include="..\x64\Release\Img\ballImg.png">
+      <Filter>img</Filter>
+    </Image>
+    <Image Include="..\x64\Release\Img\Quit.png">
+      <Filter>img</Filter>
+    </Image>
+    <Image Include="..\x64\Release\Img\Quit_Selected.png">
+      <Filter>img</Filter>
+    </Image>
+    <Image Include="..\x64\Release\Img\Rope.png">
+      <Filter>img</Filter>
+    </Image>
+    <Image Include="..\x64\Release\Img\ropeImg.png">
+      <Filter>img</Filter>
+    </Image>
+    <Image Include="..\x64\Release\Img\Start.png">
+      <Filter>img</Filter>
+    </Image>
+    <Image Include="..\x64\Release\Img\Start_Selected.png">
+      <Filter>img</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="..\x64\Release\font\Boba_Cups.ttf">
+      <Filter>font</Filter>
+    </Font>
   </ItemGroup>
 </Project>

@@ -16,9 +16,7 @@ Rope rope(ropeStartPosition, 3.f, ropeLength, spherePosition);
 
 Obstacle obstacle1(sf::Vector2f(640.f, 360.f), 0.f, sf::Vector2f(10.f, 200.f));
 
-TextTransition text1("You completed the First Level!", sf::Vector2f(-700.f, 100), 32);
-TextTransition text2("Press [Space] To Continue", sf::Vector2f(-700.f, 150), 20);
-
+TextTransition text1("You completed this Level", sf::Vector2f(-700.f, 100), 32);
 
 bool levelOne(sf::RenderWindow& window)
 {
@@ -39,7 +37,6 @@ bool levelOne(sf::RenderWindow& window)
 
     if (goal.checkIfScored(rope.ball))
     {
-        applyTransition(window);
         return true;
     }
     else
@@ -48,8 +45,15 @@ bool levelOne(sf::RenderWindow& window)
     }
 }
 
-void applyTransition(sf::RenderWindow& window)
+
+bool applyTransition(sf::RenderWindow& window)
 {
-    text1.moveText();
-    text1.draw(window);
+    if (text1.moveText())
+    {
+        return true;
+    }
+    else {
+        text1.draw(window);
+        return false;
+    }
 }

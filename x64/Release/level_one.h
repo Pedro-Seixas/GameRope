@@ -9,6 +9,6 @@
 #include "Obstacle.h"
 
 bool levelOne(sf::RenderWindow& window);
-void applyTransition(sf::RenderWindow& window);
+bool applyTransition(sf::RenderWindow& window);
 
 #endif
