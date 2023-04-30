@@ -9,7 +9,8 @@
 #include "Obstacle.h"
 
 bool levelOne(sf::RenderWindow& window);
-bool applyTransition(sf::RenderWindow& window);
+bool applyTransitionEnd(sf::RenderWindow& window);
+bool applyTransitionStart(sf::RenderWindow& window);
 void loadLevelTwo(sf::RenderWindow& window);
 
 #endif

@@ -12,11 +12,15 @@ public:
     sf::Text getText() const { return m_text; }
     bool moveText();
     void draw(sf::RenderWindow& window);
+    void resetClock();
+    bool getReset() const { return m_reset; }
+    void setReset(bool reset);
 
 private:
     sf::Text m_text;
     sf::Font font;
-    sf::Clock clock;
+    sf::Clock waitTimer;
+    bool m_reset = true;
 };
 
 #endif

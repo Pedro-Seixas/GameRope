@@ -4,12 +4,6 @@
 #include "MainMenu.h"
 #include "TextTransition.h"
 
-
-void TextTransition::draw(sf::RenderWindow& window)
-{
-    window.draw(m_text);
-}
-
 enum GameState { MENU, LEVEL_ONE, LEVEL_TWO };
 
 
@@ -49,7 +43,7 @@ int main()
         case LEVEL_ONE:
             if (levelOne(window))
             {
-                if (applyTransition(window))
+                if (applyTransitionEnd(window))
                 {
                     currentState = LEVEL_TWO;
                 }
