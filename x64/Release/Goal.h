@@ -11,7 +11,8 @@ public:
     Goal(sf::Vector2f position, sf::Vector2f size);
     void draw(sf::RenderWindow& window);
     sf::RectangleShape m_goal;
-    bool checkIfScored(Ball* rope);
+    bool checkIfScored(Ball* ball);
+
 private:
     sf::Vector2f m_position;
 

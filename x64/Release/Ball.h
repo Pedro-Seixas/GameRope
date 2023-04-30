@@ -18,10 +18,11 @@ public:
     void scoredGoal();
     bool getBallScored() const { return ballScored; }
     bool getBallEscaped() const { return ballEscaped; }
-    void setBallStatus();
+    void setBallStatus(bool status);
     void invertVelocity();
     bool outOfBounds();
     void setBallEscaped(bool escapeStatus);
+    void setGravity(float gravity);
 
 private:
     float m_gravity;

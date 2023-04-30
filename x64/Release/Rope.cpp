@@ -79,4 +79,17 @@ void Rope::restartBall()
     ball->m_ball.setPosition(getFinalPosition());
     ball->setVelocity(m_angle);
     ball->setBallEscaped(false);
+    ball->setGravity(-0.2f);
+}
+
+void Rope::setNewPosition(sf::Vector2f position)
+{
+    m_startPosition = position;
+    m_rope.setPosition(m_startPosition);
+    m_finalPosition = sf::Vector2f(m_startPosition.x, m_startPosition.y + m_length);
+}
+
+void Rope::setSpherePosition(sf::Vector2f position)
+{
+    sphere.setPosition(position);
 }

@@ -19,7 +19,7 @@ int main()
     GameState currentState = MENU;
 
     sf::RenderWindow window(sf::VideoMode(1280, 720), "I ROPE it works");
-    window.setFramerateLimit(120);
+    window.setFramerateLimit(60);
 
     while (window.isOpen())
     {
@@ -56,14 +56,12 @@ int main()
             }
             break;
 
-        //case LEVEL_TWO:
-        //    if (levelTwo(window))
-        //    {
-        //        if (applyTransition(window))
-        //        {
-        //            std::cout << "You completed The Level" << std::endl;
-        //        }
-        //    }
+        case LEVEL_TWO:
+            loadLevelTwo(window);
+            if (levelOne(window))
+            {
+
+            }
         }
 
 

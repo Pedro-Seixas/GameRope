@@ -5,7 +5,7 @@
 
 # define M_PI 3.14159265358979323846
 
-Ball::Ball(float radius, sf::Vector2f position) : m_gravity(-0.1f), m_velocity(0.f, 0.f)
+Ball::Ball(float radius, sf::Vector2f position) : m_gravity(-0.2), m_velocity(0.f, 0.f)
 {
     if (!ballTexture.loadFromFile("img/ballImg.png")) {
         std::cout << "Failed to Upload Image" << std::endl;
@@ -40,7 +40,7 @@ void Ball::invertVelocity()
 
 void Ball::ballEscape(sf::Vector2f velocity, sf::Vector2f position)
 {
-    float velocityMultiplier = 1;
+    float velocityMultiplier = 2.5;
 
     sf::Vector2f newPosition = position + sf::Vector2f(velocity.x * velocityMultiplier, -velocity.y * velocityMultiplier);
 
@@ -62,6 +62,7 @@ void Ball::update(sf::Vector2f newPosition) {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
     {
         ballEscaped = true;
+        std::cout << "ball escaped" << std::endl;
     }
 
 
@@ -86,12 +87,17 @@ bool Ball::outOfBounds()
     }
 }
 
-void Ball::setBallStatus()
+void Ball::setBallStatus(bool status)
 {
-    ballScored = true;
+    ballScored = status;
 }
 
 void Ball::setBallEscaped(bool escapeStatus)
 {
     ballEscaped = escapeStatus;
+}
+
+void Ball::setGravity(float gravity)
+{
+    m_gravity = gravity;
 }

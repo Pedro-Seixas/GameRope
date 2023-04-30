@@ -10,5 +10,6 @@
 
 bool levelOne(sf::RenderWindow& window);
 bool applyTransition(sf::RenderWindow& window);
+void loadLevelTwo(sf::RenderWindow& window);
 
 #endif

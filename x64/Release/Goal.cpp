@@ -17,15 +17,15 @@ void Goal::draw(sf::RenderWindow& window)
     window.draw(m_goal);
 }
 
-bool Goal::checkIfScored(Ball* rope)
+bool Goal::checkIfScored(Ball* ball)
 {
-    sf::CircleShape m_ball = rope->m_ball;
+    sf::CircleShape m_ball = ball->m_ball;
     //Check if ball is inside goal.
     if (m_goal.getGlobalBounds().contains(m_ball.getPosition()))
     {
         std::cout << "GOOOOOOOOOOOOAL" << std::endl;
-        rope->setBallStatus();
-        rope->scoredGoal();
+        ball->setBallStatus(true);
+        ball->scoredGoal();
         return true;
 
     }

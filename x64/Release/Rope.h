@@ -12,9 +12,10 @@ public:
     Rope(sf::Vector2f startPosition, float width, float height, sf::Vector2f spherePosition);
     void draw(sf::RenderWindow& window);
     void update();
+    void setNewPosition(sf::Vector2f position);
+    void setSpherePosition(sf::Vector2f position);
     sf::Vector2f getFinalPosition();
     sf::Transform transform = m_rope.getTransform();
-    void createNewBall();
     float getTime() const { return deltaTime; }
     void restartBall();
     Ball* ball;
