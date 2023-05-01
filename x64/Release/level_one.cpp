@@ -16,7 +16,7 @@ Rope rope(ropeStartPosition, 3.f, ropeLength, spherePosition);
 
 Obstacle obstacle1(sf::Vector2f(640.f, 360.f), 0.f, sf::Vector2f(10.f, 200.f));
 
-TextTransition text1("You Completed The Level", sf::Vector2f(-700.f, 100), 32);
+TextTransition text1("YOU COMPLETED THE LEVEL", sf::Vector2f(-700.f, 100), 32);
 TextTransition text2("LEVEL TWO", sf::Vector2f(-700.f, 100), 42);
 //TODO create a function level2 where set all the objetos in new positions/sizes
 // then update goalScored to false and call this function on main.cpp

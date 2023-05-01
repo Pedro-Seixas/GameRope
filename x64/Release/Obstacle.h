@@ -14,9 +14,13 @@ public:
 	void draw(sf::RenderWindow& window);
 	sf::RectangleShape getObstacle() const { return m_obstacle; }
 	void ballHitObstacle(Ball* ball);
+	void setNewPosition(sf::Vector2f position);
+	void setSize(sf::Vector2f size);
+	void obstacleEnable(bool status);
 
 private:
 	sf::RectangleShape m_obstacle;
+	sf::Vector2f m_position;
 
 
 };
