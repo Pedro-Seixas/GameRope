@@ -1,5 +1,6 @@
 #pragma once
 #include "SFML/Graphics.hpp"
+#include "SFML/Audio.hpp"
 #include <iostream>
 #ifndef MENU_H
 #define MENU_H
@@ -26,6 +27,8 @@ private:
     sf::Texture titleTexture;
     sf::Sprite titleSprite;
     std::unique_ptr<Button[]> buttons;
+    sf::Sound sound;
+    sf::SoundBuffer buffer;
 };
 
 

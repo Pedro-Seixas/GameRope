@@ -45,6 +45,13 @@ Menu::Menu(sf::Vector2f startPosition, sf::Vector2f size)
     titleSprite.setPosition(titlePosition);
     titleSprite.setScale(0.7f, 0.7f);
 
+    if (!buffer.loadFromFile("audio/selectSound.wav"))
+    {
+        std::cout << "Failed to load Audio" << std::endl;
+    }
+    sound.setBuffer(buffer);
+    sound.setVolume(50.f);
+
 }
 
 void Menu::drawMenu(sf::RenderWindow& window) {
@@ -57,16 +64,32 @@ void Menu::drawMenu(sf::RenderWindow& window) {
 void Menu::update(sf::RenderWindow& window) {
 
     int buttonNumber = 0;
+
+    //This variable will be responsible to the sound not being played every frame, but only when the mouse is in a different button
+    static int lastButton = 99;
+
     sf::Vector2i mousePos = sf::Mouse::getPosition(window);
     sf::Vector2f mousePosView = window.mapPixelToCoords(mousePos);
+
+
 
     for (int i = 0; i < 3; i++) {
         if (buttons[i].buttonSprite.getGlobalBounds().contains(mousePosView)) {
             buttons[i].buttonSprite.setTexture(buttons[i].selectedButton);
             buttonNumber = i;
+            if (lastButton == buttonNumber)
+            {
+                continue;
+            }
+            else 
+            {
+                lastButton = buttonNumber;
+                sound.play();
+            }
             break;
         }
-        else {
+        else
+        {
             buttons[i].buttonSprite.setTexture(buttons[i].normalButton);
         }
     }

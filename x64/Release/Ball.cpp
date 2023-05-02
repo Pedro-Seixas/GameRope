@@ -18,6 +18,13 @@ Ball::Ball(float radius, sf::Vector2f position) : m_gravity(-0.2), m_velocity(0.
     ballScored = false;
     ballEscaped = false;
 
+    if (!buffer.loadFromFile("audio/releaseSound.wav"))
+    {
+        std::cout << "Failed to load Audio" << std::endl;
+    }
+    sound.setBuffer(buffer);
+    sound.setVolume(50.f);
+
 };
 
 void Ball::setVelocity(float angle)
@@ -56,13 +63,20 @@ void Ball::draw(sf::RenderWindow& window)
     window.draw(m_ball);
 }
 
-void Ball::update(sf::Vector2f newPosition) {
+void Ball::update(sf::Vector2f newPosition) 
+{
+  
     m_ball.setPosition(newPosition);
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
     {
         ballEscaped = true;
         std::cout << "ball escaped" << std::endl;
+        if (!keyboardPressed)
+        {
+            sound.play();
+            keyboardPressed = true;
+        }
     }
 
 
@@ -79,6 +93,11 @@ bool Ball::outOfBounds()
 {
     if ((m_ball.getPosition().x > 1400 || m_ball.getPosition().x < -400.f ) || m_ball.getPosition().y > 900)
     {
+        if (keyboardPressed)
+        {
+            keyboardPressed = false;
+
+        }
         return true;
     }
     else

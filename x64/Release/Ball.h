@@ -1,5 +1,6 @@
 #pragma once
 #include "SFML/Graphics.hpp"
+#include "SFML/Audio.hpp"
 #include <iostream>
 #include "Obstacle.h"
 #ifndef BALL_H
@@ -30,6 +31,9 @@ private:
     sf::Vector2f m_velocity;
     bool ballScored;
     bool ballEscaped;
+    sf::Sound sound;
+    sf::SoundBuffer buffer;
+    bool keyboardPressed = false;
 };
 
 #endif
