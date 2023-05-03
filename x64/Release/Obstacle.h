@@ -17,11 +17,11 @@ public:
 	void setNewPosition(sf::Vector2f position);
 	void setSize(sf::Vector2f size);
 	void obstacleEnable(bool status);
+	void setRotation(float angle);
 
 private:
 	sf::RectangleShape m_obstacle;
 	sf::Vector2f m_position;
-
 
 };
 

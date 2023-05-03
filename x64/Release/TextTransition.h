@@ -15,12 +15,15 @@ public:
     void resetClock();
     bool getReset() const { return m_reset; }
     void setReset(bool reset);
+    void resetTransition();
 
 private:
     sf::Text m_text;
     sf::Font font;
     sf::Clock waitTimer;
+    sf::Vector2f m_position;
     bool m_reset = true;
+    bool resetPosition = true;
 };
 
 #endif

@@ -11,6 +11,7 @@ TextTransition::TextTransition(std::string text, sf::Vector2f position, unsigned
     m_text.setCharacterSize(size);
     m_text.setFillColor(sf::Color::White);
     m_text.setPosition(position);
+    m_position = position;
 }
 bool TextTransition::moveText()
 {
@@ -54,4 +55,9 @@ void TextTransition::setReset(bool reset)
 void TextTransition::draw(sf::RenderWindow& window)
 {
     window.draw(m_text);
+}
+
+void TextTransition::resetTransition()
+{
+
 }

@@ -35,3 +35,13 @@ bool Goal::checkIfScored(Ball* ball)
     }
 
 }
+
+void Goal::setNewPosition(sf::Vector2f position)
+{
+    m_goal.setPosition(position);
+}
+
+void Goal::setSize(sf::Vector2f size)
+{
+    m_goal.setSize(size);
+}

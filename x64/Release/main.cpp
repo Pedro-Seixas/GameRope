@@ -54,7 +54,10 @@ int main()
             loadLevelTwo(window);
             if (levelOne(window))
             {
-
+                if (applyTransitionEnd(window))
+                {
+                    currentState = LEVEL_ONE;
+                }
             }
         }
 
