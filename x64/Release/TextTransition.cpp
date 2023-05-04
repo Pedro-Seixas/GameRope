@@ -16,7 +16,6 @@ TextTransition::TextTransition(std::string text, sf::Vector2f position, unsigned
 bool TextTransition::moveText()
 {
     static float velocity;
-    std::cout << waitTimer.getElapsedTime().asSeconds() << std::endl;
     sf::Vector2f position = m_text.getPosition();
 
     if (m_text.getPosition().x >= 500 && waitTimer.getElapsedTime().asSeconds() <= 1.7)
@@ -25,7 +24,7 @@ bool TextTransition::moveText()
     }
     else
     {
-        velocity = 30.f;
+        velocity = 50.f;
         m_text.setPosition(sf::Vector2f(position.x + velocity, position.y));
     }
     //Check if Text left screen
@@ -66,4 +65,9 @@ void TextTransition::resetTransition()
 void TextTransition::setResetPosition(bool reset)
 {
     resetPosition = reset;
+}
+
+void TextTransition::changeText(std::string text)
+{
+    m_text.setString(text);
 }

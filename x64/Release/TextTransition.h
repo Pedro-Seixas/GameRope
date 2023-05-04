@@ -18,6 +18,7 @@ public:
     void resetTransition();
     void setResetPosition(bool reset);
     bool getResetPosition() const { return resetPosition; }
+    void changeText(std::string text);
 
 private:
     sf::Text m_text;
