@@ -1,6 +1,6 @@
 #include "SFML/Graphics.hpp"
 #include <iostream>
-#include "level_one.h"
+#include "levels.h"
 #include "MainMenu.h"
 #include "TextTransition.h"
 
@@ -88,7 +88,7 @@ int main()
             {
                 if (transition(window))
                 {
-                    currentState = LEVEL_ONE;
+                    //Add more Levels
                 }
             }
             break;

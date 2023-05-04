@@ -21,7 +21,7 @@
   <ItemGroup>
     <ClCompile Include="..\x64\Release\Ball.cpp" />
     <ClCompile Include="..\x64\Release\Goal.cpp" />
-    <ClCompile Include="..\x64\Release\level_one.cpp" />
+    <ClCompile Include="..\x64\Release\levels.cpp" />
     <ClCompile Include="..\x64\Release\main.cpp" />
     <ClCompile Include="..\x64\Release\MainMenu.cpp" />
     <ClCompile Include="..\x64\Release\Menu.cpp" />
@@ -32,7 +32,7 @@
   <ItemGroup>
     <ClInclude Include="..\x64\Release\Ball.h" />
     <ClInclude Include="..\x64\Release\Goal.h" />
-    <ClInclude Include="..\x64\Release\level_one.h" />
+    <ClInclude Include="..\x64\Release\levels.h" />
     <ClInclude Include="..\x64\Release\MainMenu.h" />
     <ClInclude Include="..\x64\Release\Menu.h" />
     <ClInclude Include="..\x64\Release\Obstacle.h" />

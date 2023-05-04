@@ -27,7 +27,7 @@
     <ClCompile Include="..\x64\Release\Goal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\x64\Release\level_one.cpp">
+    <ClCompile Include="..\x64\Release\levels.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\x64\Release\main.cpp">
@@ -56,7 +56,7 @@
     <ClInclude Include="..\x64\Release\Goal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\x64\Release\level_one.h">
+    <ClInclude Include="..\x64\Release\levels.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\x64\Release\MainMenu.h">
