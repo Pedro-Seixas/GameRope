@@ -23,7 +23,7 @@ TextTransition text2("LEVEL TWO", sf::Vector2f(-700.f, 100), 42);
 bool transitionComplete = true;
 bool tempBallStatus = true;
 
-bool levelOne(sf::RenderWindow& window)
+bool level(sf::RenderWindow& window)
 {
 
     goal.checkIfScored(rope.ball);
@@ -73,6 +73,7 @@ void loadLevelTwo(sf::RenderWindow& window)
         transitionComplete = false;
 
         text1.resetTransition();
+
         text2.resetTransition();
         text2.changeText("LEVEL THREE");
     }
@@ -90,7 +91,7 @@ void loadLevelThree(sf::RenderWindow& window)
         //New Obstacles
         obstacles[0].setNewPosition(sf::Vector2f(640.f, 0.f));
         obstacles[1].setNewPosition(sf::Vector2f(640.f, 400.f));
-        obstacles[1].setSize(sf::Vector2f(10.f, 300.f));
+        obstacles[1].setSize(sf::Vector2f(10.f, 400.f));
 
         rope.ball->setBallEscaped(false);
         rope.ball->setBallStatus(false);
@@ -102,8 +103,39 @@ void loadLevelThree(sf::RenderWindow& window)
         transitionComplete = false;
 
         text1.resetTransition();
+
         text2.resetTransition();
         text2.changeText("LEVEL FOUR");
+    }
+
+
+
+}
+
+void loadLevelFour(sf::RenderWindow& window)
+{
+    if (transitionComplete)
+    {
+        rope.restartBall();
+
+        //New Obstacles
+        obstacles[0].setNewPosition(sf::Vector2f(640.f, 0.f));
+        obstacles[1].setNewPosition(sf::Vector2f(640.f, 300.f));
+        obstacles[1].setSize(sf::Vector2f(10.f, 600.f));
+
+        rope.ball->setBallEscaped(false);
+        rope.ball->setBallStatus(false);
+
+        text1.setReset(true);
+        text2.setReset(true);
+
+        tempBallStatus = true;
+        transitionComplete = false;
+
+        text1.resetTransition();
+
+        text2.resetTransition();
+        text2.changeText("LEVEL FIVE");
     }
 
 
