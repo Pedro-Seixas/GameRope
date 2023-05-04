@@ -10,13 +10,16 @@ Rope::Rope(sf::Vector2f startPosition, float width, float height, sf::Vector2f s
     }
 
     m_startPosition = startPosition;
+
     m_rope.setSize(sf::Vector2f(width, height));
     m_rope.setFillColor(sf::Color::White);
     m_rope.setPosition(startPosition);
     m_rope.setTexture(&texture);
     m_rope.setScale(2.f, 1.f);
+
     m_finalPosition = sf::Vector2f(m_startPosition.x, m_startPosition.y + height);
     m_length = height;
+
     ball = new Ball(30.f, m_finalPosition);
 
     sphere.setPosition(sf::Vector2f(spherePosition));
@@ -58,8 +61,6 @@ void Rope::update()
     else {
         ball->update(ballPosition);
         ball->setVelocity(m_angle);
-
-        std::cout << ball->getVelocity().x << "," << ball->getVelocity().y << std::endl;
     }
 
     if (ball->outOfBounds())
@@ -80,6 +81,9 @@ void Rope::restartBall()
     ball->setVelocity(m_angle);
     ball->setBallEscaped(false);
     ball->setGravity(-0.2f);
+
+    //Make sure to set the keyboard to false so the sound does not bug.
+    ball->setKeyboardPressed(false);
 }
 
 void Rope::setNewPosition(sf::Vector2f position)

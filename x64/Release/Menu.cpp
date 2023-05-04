@@ -104,7 +104,6 @@ void Menu::update(sf::RenderWindow& window) {
 
 int Menu::getButtonSelection()
 {
-    std::cout << buttonSelection << std::endl;
     return buttonSelection;
 }
 

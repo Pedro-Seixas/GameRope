@@ -5,10 +5,11 @@
 Obstacle::Obstacle(sf::Vector2f position, float rotation, sf::Vector2f size)
 {
 	m_obstacle.setPosition(position);
-    m_position = position;
 	m_obstacle.setSize(size);
 	m_obstacle.setFillColor(sf::Color::White);
 	m_obstacle.setRotation(rotation);
+
+    m_position = position;
 
 }
 
