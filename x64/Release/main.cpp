@@ -4,7 +4,13 @@
 #include "MainMenu.h"
 #include "TextTransition.h"
 
-enum GameState { MENU, LEVEL_ONE, LEVEL_TWO, LEVEL_THREE };
+std::string aboutString = " This game was designed by Pedro Seixas.\n\n The goal is to release the Ball by pressing [SPACE]\n \
+so it reaches the Goal.\n\n This was a fun project to do and building the logic behind\n the main loop was tricky. But I \
+am happy with the result.";
+
+enum GameState { MENU, ABOUT, LEVEL_ONE, LEVEL_TWO, LEVEL_THREE, LEVEL_FOUR };
+
+TextTransition about(aboutString, sf::Vector2f(200, 200), 30);
 
 int main()
 {
@@ -31,16 +37,20 @@ int main()
             }
             else if (menu(window) == 1)
             {
-
+                currentState = ABOUT;
             }
             else if (menu(window) == 2)
             {
                 window.close();
             }
             break;
+        case ABOUT:
+            window.clear(sf::Color(32, 32, 32));
+            about.draw(window);
+            break;
         case LEVEL_ONE:
             //Check if the level was completed, if so apply transition and check if its done applying the transition.
-            if (levelOne(window))
+            if (level(window))
             {
                 if (transition(window))
                 {
@@ -52,7 +62,7 @@ int main()
         case LEVEL_TWO:
             loadLevelTwo(window);
 
-            if (levelOne(window) && getCompleteStatus())
+            if (level(window) && getCompleteStatus())
             {
 
                 if (transition(window))
@@ -63,7 +73,18 @@ int main()
             break;
         case LEVEL_THREE:
             loadLevelThree(window);
-            if (levelOne(window))
+            if (level(window))
+            {
+                if (transition(window))
+                {
+                    currentState = LEVEL_FOUR;
+                }
+            }
+            break;
+
+        case LEVEL_FOUR:
+            loadLevelFour(window);
+            if (level(window))
             {
                 if (transition(window))
                 {
