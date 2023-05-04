@@ -10,7 +10,7 @@
 
 bool levelOne(sf::RenderWindow& window);
 bool applyTransitionEnd(sf::RenderWindow& window);
-bool applyTransitionStart(TextTransition& text, sf::RenderWindow& window);
+bool applyTransitionStart(sf::RenderWindow& window);
 void loadLevelTwo(sf::RenderWindow& window);
 
 #endif

@@ -4,7 +4,7 @@
 #include "MainMenu.h"
 #include "TextTransition.h"
 
-enum GameState { MENU, LEVEL_ONE, LEVEL_TWO };
+enum GameState { MENU, LEVEL_ONE, LEVEL_TWO, LEVEL_THREE };
 
 
 int main()
@@ -56,9 +56,15 @@ int main()
             {
                 if (applyTransitionEnd(window))
                 {
-                    currentState = LEVEL_ONE;
+                    std::cout << "Level Two" << std::endl;
+                    //currentState = LEVEL_THREE;
                 }
             }
+            break;
+        case LEVEL_THREE:
+            std::cout << "Level three" << std::endl;
+            break;
+
         }
 
 

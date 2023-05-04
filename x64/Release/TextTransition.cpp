@@ -26,13 +26,11 @@ bool TextTransition::moveText()
     else
     {
         velocity = 30.f;
-        std::cout << m_text.getPosition().x << std::endl;
         m_text.setPosition(sf::Vector2f(position.x + velocity, position.y));
     }
     //Check if Text left screen
     if (m_text.getPosition().x > 2000)
     {
-        std::cout << m_text.getPosition().x << std::endl;
         return true;
     }
     else
@@ -59,5 +57,13 @@ void TextTransition::draw(sf::RenderWindow& window)
 
 void TextTransition::resetTransition()
 {
+    m_text.setPosition(m_position);
+    resetClock();
+    setResetPosition(true);
 
+}
+
+void TextTransition::setResetPosition(bool reset)
+{
+    resetPosition = reset;
 }

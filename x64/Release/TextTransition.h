@@ -16,6 +16,8 @@ public:
     bool getReset() const { return m_reset; }
     void setReset(bool reset);
     void resetTransition();
+    void setResetPosition(bool reset);
+    bool getResetPosition() const { return resetPosition; }
 
 private:
     sf::Text m_text;

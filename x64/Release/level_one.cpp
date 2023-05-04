@@ -53,7 +53,6 @@ bool applyTransitionStart(TextTransition& text, sf::RenderWindow& window)
         return true;
     }
     else {
-        std::cout << "DRAAAAAAAAW" << std::endl;
         text.draw(window);
         return false;
     }
@@ -84,17 +83,21 @@ bool levelOne(sf::RenderWindow& window)
     if (goal.checkIfScored(rope.ball))
     {
         return true;
+
     }
     else
     {
         return false;
     }
+
 }
 
 void loadLevelTwo(sf::RenderWindow& window)
 {
     if (rope.ball->getBallScored() && applyTransitionStart(text2, window))
     {
+        text1.setResetPosition(false);
+        text2.setResetPosition(false);
         std::cout << "Dentro da funcao leveltwo" << std::endl;
         rope.restartBall();
 
