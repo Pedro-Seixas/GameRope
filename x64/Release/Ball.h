@@ -24,6 +24,7 @@ public:
     bool outOfBounds();
     void setBallEscaped(bool escapeStatus);
     void setGravity(float gravity);
+    void setKeyboardPressed(bool status);
 
 private:
     float m_gravity;

@@ -12,9 +12,9 @@ Ball::Ball(float radius, sf::Vector2f position) : m_gravity(-0.2), m_velocity(0.
     }
 
     m_ball.setRadius(radius);
-    //m_ball.setFillColor(sf::Color::Red);
     m_ball.setPosition(position);
     m_ball.setTexture(&ballTexture);
+
     ballScored = false;
     ballEscaped = false;
 
@@ -22,6 +22,7 @@ Ball::Ball(float radius, sf::Vector2f position) : m_gravity(-0.2), m_velocity(0.
     {
         std::cout << "Failed to load Audio" << std::endl;
     }
+
     sound.setBuffer(buffer);
     sound.setVolume(50.f);
 
@@ -71,7 +72,6 @@ void Ball::update(sf::Vector2f newPosition)
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
     {
         ballEscaped = true;
-        std::cout << "ball escaped" << std::endl;
         if (!keyboardPressed)
         {
             sound.play();
@@ -119,4 +119,9 @@ void Ball::setBallEscaped(bool escapeStatus)
 void Ball::setGravity(float gravity)
 {
     m_gravity = gravity;
+}
+
+void Ball::setKeyboardPressed(bool status)
+{
+    keyboardPressed = status;
 }
