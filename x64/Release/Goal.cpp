@@ -10,6 +10,15 @@ Goal::Goal(sf::Vector2f position, sf::Vector2f size)
     m_goal.setPosition(position);
     m_goal.setFillColor(sf::Color::Green);
     m_goal.setSize(size);
+
+    //Audio
+    if (!buffer.loadFromFile("audio/goal.wav"))
+    {
+        std::cout << "Failed to load Audio" << std::endl;
+    }
+
+    sound.setBuffer(buffer);
+    sound.setVolume(50.f);
 };
 
 void Goal::draw(sf::RenderWindow& window)
@@ -23,14 +32,19 @@ bool Goal::checkIfScored(Ball* ball)
     //Check if ball is inside goal.
     if (m_goal.getGlobalBounds().contains(m_ball.getPosition()))
     {
-        std::cout << "GOOOOOOOOOOOOAL" << std::endl;
         ball->setBallStatus(true);
         ball->scoredGoal();
+        if (playOnce)
+        {
+            sound.play();
+            playOnce = false;
+        }
         return true;
 
     }
     else
     {
+        playOnce = true;
         return false;
     }
 

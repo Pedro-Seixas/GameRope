@@ -17,6 +17,9 @@ public:
 
 private:
     sf::Vector2f m_position;
+    sf::Sound sound;
+    sf::SoundBuffer buffer;
+    bool playOnce = true;
 
 };
 
