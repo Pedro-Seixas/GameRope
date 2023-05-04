@@ -3,8 +3,8 @@
 #include "level_one.h"
 #include "MainMenu.h"
 #include "TextTransition.h"
-enum GameState { MENU, LEVEL_ONE, LEVEL_TWO, LEVEL_THREE };
 
+enum GameState { MENU, LEVEL_ONE, LEVEL_TWO, LEVEL_THREE };
 
 int main()
 {
@@ -38,8 +38,8 @@ int main()
                 window.close();
             }
             break;
-
         case LEVEL_ONE:
+            //Check if the level was completed, if so apply transition and check if its done applying the transition.
             if (levelOne(window))
             {
                 if (transition(window))
@@ -51,14 +51,12 @@ int main()
 
         case LEVEL_TWO:
             loadLevelTwo(window);
-            std::cout << "Dentro LEVEL TWO mas antes do bloco" << std::endl;
 
             if (levelOne(window) && getCompleteStatus())
             {
 
                 if (transition(window))
                 {
-                    std::cout << "Level Two" << std::endl;
                     currentState = LEVEL_THREE;
                 }
             }
@@ -69,7 +67,6 @@ int main()
             {
                 if (transition(window))
                 {
-                    std::cout << "Level Three" << std::endl;
                     currentState = LEVEL_ONE;
                 }
             }

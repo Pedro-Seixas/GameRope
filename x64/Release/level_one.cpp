@@ -4,7 +4,6 @@
 sf::Vector2f ropeStartPosition(150, 300);
 sf::Vector2f goalStartPosition(1000, 160);
 sf::Vector2f goalSize(200.f, 400.f);
-
 sf::Vector2f spherePosition = ropeStartPosition + sf::Vector2f(-5.f, -3.f); //Account for rope width
 
 //Rope object
@@ -20,6 +19,7 @@ Obstacle(sf::Vector2f(5000.f, 5000.f), 0.f, sf::Vector2f(10.f, 200.f)) };
 
 TextTransition text1("YOU COMPLETED THE LEVEL", sf::Vector2f(-700.f, 100), 32);
 TextTransition text2("LEVEL TWO", sf::Vector2f(-700.f, 100), 42);
+
 bool transitionComplete = true;
 bool tempBallStatus = true;
 
@@ -58,7 +58,6 @@ void loadLevelTwo(sf::RenderWindow& window)
 {
     if (transitionComplete)
     {
-        std::cout << "Dentro da funcao leveltwo" << std::endl;
         rope.restartBall();
 
         //New Obstacles
@@ -75,6 +74,7 @@ void loadLevelTwo(sf::RenderWindow& window)
 
         text1.resetTransition();
         text2.resetTransition();
+        text2.changeText("LEVEL THREE");
     }
 
 
@@ -85,12 +85,12 @@ void loadLevelThree(sf::RenderWindow& window)
 {
     if (transitionComplete)
     {
-        std::cout << "Dentro da funcao leveltwo" << std::endl;
         rope.restartBall();
 
         //New Obstacles
-        obstacles[0].setNewPosition(sf::Vector2f(740.f, 360.f));
-        obstacles[1].setNewPosition(sf::Vector2f(640.f, 360.f));
+        obstacles[0].setNewPosition(sf::Vector2f(640.f, 0.f));
+        obstacles[1].setNewPosition(sf::Vector2f(640.f, 400.f));
+        obstacles[1].setSize(sf::Vector2f(10.f, 300.f));
 
         rope.ball->setBallEscaped(false);
         rope.ball->setBallStatus(false);
@@ -103,6 +103,7 @@ void loadLevelThree(sf::RenderWindow& window)
 
         text1.resetTransition();
         text2.resetTransition();
+        text2.changeText("LEVEL FOUR");
     }
 
 
@@ -114,7 +115,6 @@ bool transition(sf::RenderWindow& window)
     std::cout << text1.getReset() << std::endl;
     if (text1.getReset())
     {
-        std::cout << "-----------------------------------------------------------" << std::endl;
         text1.resetClock();
     }
 
@@ -127,7 +127,6 @@ bool transition(sf::RenderWindow& window)
 
         if (text2.getReset())
         {
-            std::cout << "-----------------------------------------------------------" << std::endl;
             text2.resetClock();
         }
         if (text2.moveText())
