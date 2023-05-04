@@ -13,7 +13,7 @@ bool levelOne(sf::RenderWindow& window);
 bool applyTransitionEnd(sf::RenderWindow& window);
 bool applyTransitionStart(sf::RenderWindow& window);
 void loadLevelTwo(sf::RenderWindow& window);
-bool transition(sf::RenderWindow& window, TextTransition& text);
+bool transition(sf::RenderWindow& window/*, TextTransition& text*/);
 void loadLevelThree(sf::RenderWindow& window);
 bool getCompleteStatus();
 
