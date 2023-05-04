@@ -26,6 +26,8 @@ private:
     sf::Vector2f m_position;
     bool m_reset = true;
     bool resetPosition = true;
+    bool hasPaused = true;
+    sf::Clock pauseTimer;
 };
 
 #endif

@@ -58,7 +58,7 @@ void TextTransition::draw(sf::RenderWindow& window)
 void TextTransition::resetTransition()
 {
     m_text.setPosition(m_position);
-    resetClock();
+    //resetClock();
     setResetPosition(true);
 
 }

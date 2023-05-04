@@ -19,44 +19,67 @@ Obstacle(sf::Vector2f(5000.f, 5000.f), 0.f, sf::Vector2f(10.f, 200.f)), Obstacle
 Obstacle(sf::Vector2f(5000.f, 5000.f), 0.f, sf::Vector2f(10.f, 200.f)) };
 
 TextTransition text1("YOU COMPLETED THE LEVEL", sf::Vector2f(-700.f, 100), 32);
-TextTransition text2("LEVEL TWO", sf::Vector2f(-700.f, 100), 42);
+bool transitionComplete = true;
+bool tempBallStatus = true;
+//Temp variable to store to goal status in order to be able to reset the goal and the logic still work as the ball was in the goal
+//bool tempScore = true;
+//bool endTransitionEnded = true;
 
-
-bool applyTransitionEnd(sf::RenderWindow& window)
-{
-    if (text1.getReset())
-    {
-        text1.resetClock();
-    }
-
-    if (text1.moveText())
-    {
-        text1.setReset(true);
-        return true;
-    }
-    else {
-        text1.draw(window);
-        return false;
-    }
-}
-
-
-bool applyTransitionStart(TextTransition& text, sf::RenderWindow& window)
-{
-    if (text.getReset())
-    {
-        text.resetClock();
-    }
-
-    if (text.moveText())
-    {
-        return true;
-    }
-    else {
-        text.draw(window);
-        return false;
-    }
-}
+//bool applyTransitionEnd(sf::RenderWindow& window)
+//{
+//    if (text1.getReset())
+//    {
+//        text1.resetClock();
+//    }
+//    if (!text1.getResetPosition())
+//    {
+//        text1.resetTransition();
+//    }
+//    if (text1.moveText())
+//    {
+//        std::cout << "Entrou move text" << std::endl;
+//        std::cout << "END TRANSITION ENDED ______________________" << std::endl;
+//        tempScore = false;
+//        text1.setReset(true);
+//        endTransitionEnded = true;
+//        return true;
+//    }
+//    else {
+//        text1.draw(window);
+//        return false;
+//    }
+//}
+//
+//
+//bool applyTransitionStart(TextTransition& text, sf::RenderWindow& window)
+//{
+    //if (text.getReset())
+    //{
+    //    text.resetClock();
+    //}
+//
+//    if (!text.getResetPosition())
+//    {
+//        text.resetTransition();
+//    }
+//
+//    if (endTransitionEnded)
+//    {
+//        if (text.moveText())
+//        {
+//            std::cout << "Entrou move text" << std::endl;
+//            endTransitionEnded = false;
+//            tempScore = false;
+//            return true;
+//        }
+//        else 
+//        {
+//            text.draw(window);
+//            return false;
+//        }
+//    }
+//
+//}
 
 bool levelOne(sf::RenderWindow& window)
 {
@@ -75,15 +98,12 @@ bool levelOne(sf::RenderWindow& window)
         obstacles[i].draw(window);
     }
  
-
     rope.draw(window);
 
-    text2.draw(window);
 
-    if (goal.checkIfScored(rope.ball))
+    if (goal.checkIfScored(rope.ball) && tempBallStatus)
     {
         return true;
-
     }
     else
     {
@@ -94,10 +114,8 @@ bool levelOne(sf::RenderWindow& window)
 
 void loadLevelTwo(sf::RenderWindow& window)
 {
-    if (rope.ball->getBallScored() && applyTransitionStart(text2, window))
+    if (transitionComplete)
     {
-        text1.setResetPosition(false);
-        text2.setResetPosition(false);
         std::cout << "Dentro da funcao leveltwo" << std::endl;
         rope.restartBall();
 
@@ -106,10 +124,71 @@ void loadLevelTwo(sf::RenderWindow& window)
 
         rope.ball->setBallEscaped(false);
         rope.ball->setBallStatus(false);
-
+        transitionComplete = false;
+        text1.setReset(true);
+        tempBallStatus = true;
+        text1.resetTransition();
     }
+
 
 
 }
 
+void loadLevelThree(sf::RenderWindow& window)
+{
+    if (transitionComplete)
+    {
+        std::cout << "Dentro da funcao leveltwo" << std::endl;
+        rope.restartBall();
 
+        //New Obstacles
+        obstacles[0].setNewPosition(sf::Vector2f(740.f, 360.f));
+        obstacles[1].setNewPosition(sf::Vector2f(640.f, 360.f));
+
+        rope.ball->setBallEscaped(false);
+        rope.ball->setBallStatus(false);
+        text1.setReset(true);
+        transitionComplete = false;
+    }
+
+
+
+}
+
+bool transition(sf::RenderWindow& window, TextTransition& text)
+{
+    std::cout << text1.getReset() << std::endl;
+    if (text1.getReset())
+    {
+        std::cout << "-----------------------------------------------------------" << std::endl;
+        text1.resetClock();
+    }
+
+    if (text1.moveText())
+    {
+        if (text.getReset())
+        {
+            text.resetClock();
+        }
+        if (text.moveText())
+        {
+            tempBallStatus = false;
+            transitionComplete = true;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    else
+    {   
+        text1.draw(window);
+        return false;
+    }
+}
+
+bool getCompleteStatus()
+{
+    return tempBallStatus;
+}

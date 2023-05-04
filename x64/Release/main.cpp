@@ -3,7 +3,7 @@
 #include "level_one.h"
 #include "MainMenu.h"
 #include "TextTransition.h"
-
+TextTransition text2("LEVEL TWO", sf::Vector2f(-700.f, 100), 42);
 enum GameState { MENU, LEVEL_ONE, LEVEL_TWO, LEVEL_THREE };
 
 
@@ -43,8 +43,11 @@ int main()
         case LEVEL_ONE:
             if (levelOne(window))
             {
-                if (applyTransitionEnd(window))
+                text2.draw(window);
+                if (transition(window, text2))
                 {
+
+                    text2.resetTransition();
                     currentState = LEVEL_TWO;
                 }
             }
@@ -52,17 +55,31 @@ int main()
 
         case LEVEL_TWO:
             loadLevelTwo(window);
-            if (levelOne(window))
+            std::cout << "Dentro LEVEL TWO mas antes do bloco" << std::endl;
+
+            if (levelOne(window) && getCompleteStatus())
             {
-                if (applyTransitionEnd(window))
+                text2.draw(window);
+                text2.setReset(true);
+                if (transition(window, text2))
                 {
                     std::cout << "Level Two" << std::endl;
-                    //currentState = LEVEL_THREE;
+                    text2.resetTransition();
+                    currentState = LEVEL_THREE;
                 }
             }
             break;
         case LEVEL_THREE:
-            std::cout << "Level three" << std::endl;
+            loadLevelThree(window);
+            if (levelOne(window))
+            {
+                text2.draw(window);
+                if (transition(window, text2))
+                {
+                    std::cout << "Level Three" << std::endl;
+                    currentState = LEVEL_THREE;
+                }
+            }
             break;
 
         }
