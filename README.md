@@ -5,10 +5,10 @@ This is a simple game made in C++ using SFML for learning purposes. The objectiv
 The game engine is done and currently there are four levels to play. More will be added.
 
 # Level Two:
-![GameDemonstration1](https://user-images.githubusercontent.com/31096534/236635656-cc2e2c74-8436-4f6c-bffa-26f760f8d83d.png)
+![GameDemonstration1](https://user-images.githubusercontent.com/31096534/236635740-10bddb04-cfb4-4a03-8386-5747bcf83bb1.png)
 
 # Level Four:
-![GameDemonstration2](https://user-images.githubusercontent.com/31096534/236635659-636e6b66-e501-43f3-8c62-d5822cc0d042.png)
+![GameDemonstration2](https://user-images.githubusercontent.com/31096534/236635743-de35c921-b1b3-439d-821e-f52570f0ad50.png)
 
 
 
