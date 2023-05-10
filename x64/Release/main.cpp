@@ -8,7 +8,7 @@ std::string aboutString = " This game was designed by Pedro Seixas.\n\n The goal
 so it reaches the Goal.\n\n This was a fun project to do and building the logic behind\n the main loop was tricky. But I \
 am happy with the result.";
 
-enum GameState { MENU, ABOUT, LEVEL_ONE, LEVEL_TWO, LEVEL_THREE, LEVEL_FOUR };
+enum GameState { MENU, ABOUT, LEVEL_ONE, LEVEL_TWO, LEVEL_THREE, LEVEL_FOUR, LEVEL_FIVE };
 
 TextTransition about(aboutString, sf::Vector2f(200, 200), 30);
 
@@ -88,10 +88,19 @@ int main()
             {
                 if (transition(window))
                 {
-                    //Add more Levels
+                    currentState = LEVEL_FIVE;
                 }
             }
             break;
+        case LEVEL_FIVE:
+            loadLevelFive(window);
+            if (level(window))
+            {
+                if (transition(window))
+                {
+                    // Next Level
+                }
+            }
 
         }
 

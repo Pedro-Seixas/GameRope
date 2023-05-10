@@ -142,6 +142,42 @@ void loadLevelFour(sf::RenderWindow& window)
 
 }
 
+void loadLevelFive(sf::RenderWindow& window)
+{
+    if (transitionComplete)
+    {
+        rope.restartBall();
+
+        //New Obstacles
+        obstacles[0].setNewPosition(sf::Vector2f(540.f, -500.f));
+        obstacles[0].setSize(sf::Vector2f(10.f, 700.f));
+        obstacles[1].setNewPosition(sf::Vector2f(740.f, 100.f));
+        obstacles[1].setSize(sf::Vector2f(10.f, 800.f));
+
+        goal.setNewPosition(sf::Vector2f(800.f, 50.f));
+
+        rope.setNewPosition(ropeStartPosition + sf::Vector2f(150.f, 150.f));
+        rope.setSpherePosition(spherePosition + sf::Vector2f(150.f, 150.f));
+
+        rope.ball->setBallEscaped(false);
+        rope.ball->setBallStatus(false);
+
+        text1.setReset(true);
+        text2.setReset(true);
+
+        tempBallStatus = true;
+        transitionComplete = false;
+
+        text1.resetTransition();
+
+        text2.resetTransition();
+        text2.changeText("FINAL LEVEL");
+    }
+
+
+
+}
+
 bool transition(sf::RenderWindow& window)
 {
     std::cout << text1.getReset() << std::endl;
